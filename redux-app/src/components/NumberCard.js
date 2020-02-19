@@ -1,21 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {getDate} from '../actions/';
+import {getNumber} from '../actions/';
 import Loader from 'react-loader-spinner';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 
 
-const DateCard = (props) =>{
+const NumberCard = (props) =>{
     // 
     console.log('props!!!', props)
     return(
         <div class='content'>
-        <h2>Random Date Fact</h2>
-        <Button onClick={props.getDate} variant="contained" color="secondary">Get Date!</Button><br/>
+        <h2>Random Number Fact</h2>
+        <Button onClick={props.getNumber} variant="contained" color="secondary">Get Number!</Button><br/>
         <Container maxWidth="sm">
-        {!props.date && !props.isLoading && (
-          <h2>{props.date}</h2>
+        {!props.number && !props.isLoading && (
+          <h2>{props.number}</h2>
         )}
         {props.isLoading && (
           <Loader
@@ -26,14 +26,14 @@ const DateCard = (props) =>{
             timeout={3000} //3 secs
           />
         )}
-        {props.date && !props.isLoading && <h2>{props.date}</h2>}
+        {props.number && !props.isLoading && <h2>{props.number}</h2>}
         </Container>
       </div>
     )
 }
 const mapStateToProps = (state) =>{
     return{isLoading: state.isLoading,
-    date: state.date,
+    number: state.number,
     error: state.error}
 }
-export default connect(mapStateToProps, {getDate})(DateCard);
+export default connect(mapStateToProps, {getNumber})(NumberCard);

@@ -2,15 +2,23 @@ import React from 'react';
 import './App.css';
 import DateCard from './components/DateCard';
 import YearCard from './components/YearCard';
+import TriviaCard from './components/TriviaCard';
+import NumberCard from './components/NumberCard';
+import Home from './components/Home'
+import Header from './components/Header'
+
+import {Route} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <h1>Random Date Fact</h1>
-      <DateCard />
-
-      <h1>Random Year Fact</h1>
-      <YearCard />
+      <Header />
+        <Route exact path="/Home" render={()=> <Home />} />
+        <Route exact path="/Date" render={props => <DateCard {...props} />} />
+        <Route exact path="/Year" render={props => <YearCard {...props} />} />
+        <Route exact path="/Trivia" render={props => <TriviaCard {...props} />} />
+        <Route exact path="/Number" render={props => <NumberCard {...props} />} />
+        
     </div>
   );
 }
