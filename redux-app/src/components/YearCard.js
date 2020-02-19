@@ -1,21 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {getDate} from '../actions/';
+import {getYear} from '../actions/';
 import Loader from 'react-loader-spinner';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 
 
-const DateCard = (props) =>{
+const YearCard = (props) =>{
     // 
     console.log('props!!!', props)
     return(
         <div class='content'>
         
-        <Button onClick={props.getDate} variant="contained" color="secondary">Get Date!</Button><br/>
+        <Button onClick={props.getYear} variant="contained" color="secondary">Get Year!</Button><br/>
         <Container maxWidth="sm">
-        {!props.date && !props.isLoading && (
-          <h2>{props.date}</h2>
+        {!props.year && !props.isLoading && (
+          <h2>{props.year}</h2>
         )}
         {props.isLoading && (
           <Loader
@@ -26,14 +26,14 @@ const DateCard = (props) =>{
             timeout={3000} //3 secs
           />
         )}
-        {props.date && !props.isLoading && <h2>{props.date}</h2>}
+        {props.year && !props.isLoading && <h2>{props.year}</h2>}
         </Container>
       </div>
     )
 }
 const mapStateToProps = (state) =>{
     return{isLoading: state.isLoading,
-    date: state.date,
+        year: state.year,
     error: state.error}
 }
-export default connect(mapStateToProps, {getDate})(DateCard);
+export default connect(mapStateToProps, {getYear})(YearCard);

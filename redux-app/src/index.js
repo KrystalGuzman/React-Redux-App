@@ -8,9 +8,10 @@ import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
-import {dateReducer} from './reducers/index';
+import {Reducer} from './reducers/index';
 
-const store = createStore(dateReducer, applyMiddleware(thunk,logger));
+
+const store = createStore(Reducer, applyMiddleware(thunk,logger));
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

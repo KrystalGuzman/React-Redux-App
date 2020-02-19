@@ -1,11 +1,11 @@
-import {LOADING, DATES, ERROR} from '../actions/index';
+import {LOADING, DATES, YEARS, ERROR} from '../actions/index';
 
 export const initialState={
     date: null,
     isLoading:false,
     error: ''
 };
-export const dateReducer = (state = initialState, action) =>{
+export const Reducer = (state = initialState, action) =>{
     console.log('state', state);
     console.log('action', action)
     switch (action.type) {
@@ -20,6 +20,12 @@ export const dateReducer = (state = initialState, action) =>{
                 ...state,
                 isLoading:false,
                 date:action.payload
+            }
+        case YEARS:
+            return{
+                ...state,
+                isLoading:false,
+                year:action.payload
             }        
         case ERROR:
             return{
