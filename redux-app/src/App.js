@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-        <Route exact path="/Home" render={()=> <Home />} />
+        <Route exact path="/" render={()=> <Home />} />
         <Route exact path="/Date" render={props => <DateCard {...props} />} />
         <Route exact path="/Year" render={props => <YearCard {...props} />} />
         <Route exact path="/Trivia" render={props => <TriviaCard {...props} />} />

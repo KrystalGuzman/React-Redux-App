@@ -30,7 +30,7 @@ export default function Header() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose}><Link to="/Home" className="navbar-brand">Home</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/" className="navbar-brand">Home</Link></MenuItem>
         <MenuItem onClick={handleClose}><Link to="/Date" className="navbar-brand">Date</Link></MenuItem>
         <MenuItem onClick={handleClose}><Link to="/Year" className="navbar-brand">Year</Link></MenuItem>
         <MenuItem onClick={handleClose}><Link to="/Trivia" className="navbar-brand">Trivia</Link></MenuItem>
